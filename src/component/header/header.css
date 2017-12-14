@@ -1,0 +1,53 @@
+#header {
+	height: 60px;
+	/*border-bottom: 1px solid #999;*/
+	box-shadow: 3px 3px 3px #ccc;
+	background-color: #FFF;
+	flex: 0 0 auto;
+}
+
+#header .container {
+	width: 970px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+/*logo*/
+#header .logo {
+	height: 60px;
+	width: 196px;
+	float: left;
+	/*background-image: url(../img/logo.png);*/
+	background-repeat: no-repeat;
+}
+
+/*nav菜单开始*/
+#header nav {
+	width: 40%;
+	float: right;
+}
+
+#header nav ul {
+	height: 60px;
+	line-height: 60px;
+}
+
+#header nav li {
+	text-align: center;
+	float: left;
+	width: 25%;
+}
+
+#header nav a {
+	width: 100%;
+	display: inline-block;
+	color: #1c1c1c;
+}
+
+#header nav a:hover {
+	color: #F37726;
+}
+
+#header nav .active {
+	border-top: 2px solid #F37726;
+}
