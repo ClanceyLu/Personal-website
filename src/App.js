@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import style from './App.less'
 import Index from './container/index/index'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className={style.App}>
         <Index></Index>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
