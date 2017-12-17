@@ -1,27 +1,32 @@
+@import "../../public";
+
 .header {
-  height: 60px;
+  composes: global-shadow;
+  height: @header-height;
 	/*border-bottom: 1px solid #999;*/
-	box-shadow: 3px 3px 3px #ccc;
+	// box-shadow: 3px 3px 3px #ccc;
 	background-color: #FFF;
 	flex: 0 0 auto;
   .container {
-  	width: 970px;
-  	height: 60px;
+  	width: @body-width;
+  	height: @header-height;
   	margin: 0 auto;
   }
   h1 {
-  	height: 60px;
+  	height: @header-height;
   	width: 196px;
   	float: left;
   	background-image: url(../../static/img/logo.png);
   	background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -99999px;
   }
   nav {
   	width: 40%;
   	float: right;
     ul {
-     height: 60px;
-     line-height: 60px;
+     height: @header-height;
+     line-height: @header-height;
      li {
      	text-align: center;
      	float: left;
@@ -29,13 +34,13 @@
       a {
       	width: 100%;
       	display: inline-block;
-      	color: #1c1c1c;
+      	color: @text-color;
         &:hover {
-          color: #F37726;
+          color: @active-color;
         }
       }
       .active {
-      	border-top: 2px solid #F37726;
+      	border-top: 2px solid @active-color;
       }
      }
     }
