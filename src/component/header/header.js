@@ -1,16 +1,16 @@
 import React from 'react'
 
-import './header.css'
+import style from './header.less'
 class Header extends React.Component {
   render() {
     return (
-      <header id="header">
-        <div className="container">
-          <h1 className="logo"></h1>
+      <header className={style.header}>
+        <div className={style.container}>
+          <h1>ClanceyLu</h1>
           <nav>
             <ul>
               <li>
-                <a className="active" href="index.html">首页</a>
+                <a className={style.active} href="index.html">首页</a>
               </li>
               <li>
                 <a href="">学海无涯</a>

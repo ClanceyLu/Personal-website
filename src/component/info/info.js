@@ -1,15 +1,17 @@
 import React from 'react'
 
-import './painal.css'
+import style from './info.less'
 
-class Painal extends React.Component {
+import avatar from '../../static/img/avatar.jpg'
+
+class Info extends React.Component {
   render() {
     return (
-      <div className='box info'>
+      <div className={style.info}>
         <h2>HELLO</h2>
 				<div>
 					<figure>
-						<img src="img/dw.jpg" alt="avatar" />
+						<img src={avatar} alt="avatar" />
 						<figcaption>Clancey Lu</figcaption>
 					</figure>
 					<p>Hello, Welcome to Clancey's world!</p>
@@ -20,4 +22,4 @@ class Painal extends React.Component {
   }
 }
 
-export default Painal
+export default Info

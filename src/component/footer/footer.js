@@ -1,11 +1,11 @@
 import React from 'react'
 
-import './footer.css'
+import style from './footer.less'
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
-    		<div className="con">
+      <footer className={style.footer}>
+    		<div className={style.con}>
     			<p>2017 &copy; ClanceyLu</p>
     		</div>
     	</footer>
