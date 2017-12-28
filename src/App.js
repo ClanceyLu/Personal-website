@@ -6,6 +6,8 @@ import {
 
 import style from './App.less'
 import Index from './container/index/index'
+import Study from './container/study/study'
+import Life from './container/life/life'
 import About from './container/about/about'
 
 import Header from './component/header/header'
@@ -19,6 +21,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path='/' component={Index} />
+            <Route exact path='/study' component={Study} />
+            <Route exact path='/life' component={Life} />
             <Route path='/about' component={About} />
             <Footer />
           </div>

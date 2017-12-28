@@ -15,10 +15,10 @@ class Header extends React.Component {
                 {/* <a className={style.active} href="index.html">首页</a> */}
               </li>
               <li>
-                <a href="">学海无涯</a>
+                <Link to='/study'>学海无涯</Link>
               </li>
               <li>
-                <a href="javascript:;">品味生活</a>
+                <Link to='/life'>品味生活</Link>
               </li>
 
               <li>
