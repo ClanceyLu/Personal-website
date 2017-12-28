@@ -8,7 +8,11 @@ class Study extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b']
+      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
+      articles: [
+        {title: 'ES6', author: 'Clancey'},
+        {title: 'React', author: 'Clancey'},
+      ]
     }
   }
   render() {
@@ -16,7 +20,7 @@ class Study extends React.Component {
       <div className={style.study}>
         <div className={style.content}>
           <main>
-            Study
+            {this.state.articles.map((v) => <Article article={v} />)}
           </main>
           <aside>
             <Info />

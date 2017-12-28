@@ -8,7 +8,11 @@ class Life extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b']
+      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
+      articles: [
+        {title: '品读《沉默的羔羊》', author: 'Clancey'},
+        {title: '《心迷宫》', author: 'Clancey'},
+      ]
     }
   }
   render() {
@@ -16,7 +20,7 @@ class Life extends React.Component {
       <div className={style.life}>
         <div className={style.content}>
           <main>
-            Life
+            {this.state.articles.map((v) => <Article article={v} />)}
           </main>
           <aside>
             <Info />
