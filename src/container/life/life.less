@@ -1,0 +1,23 @@
+@import "../../public";
+.life {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .content {
+    flex: 1 0 auto;
+    width: @body-width;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    main {
+      width: 65%;
+      background-color: #FFF;
+      box-shadow: 3px 3px 3px #ccc;
+    }
+    aside {
+      width: 30%;
+      margin-left: 30px;
+    }
+  }
+}
