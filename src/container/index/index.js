@@ -9,7 +9,11 @@ class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b']
+      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
+      articles: [
+        {title: '齐物论', author: '南华真人'},
+        {title: 'Hello', author: 'Clancey'},
+      ]
     }
   }
   render() {
@@ -17,7 +21,7 @@ class Index extends React.Component {
       <div className={style.flex}>
         <div className={style.content}>
           <main>
-            <Article title='齐物论' author='南华真人' />
+            {this.state.articles.map((v) => <Article article={v} />)}
           </main>
           <aside>
             <Info />
