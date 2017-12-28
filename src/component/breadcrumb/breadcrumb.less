@@ -1,0 +1,25 @@
+@import "../../public";
+.breadcrumb {
+  margin: 15px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  ol {
+    li {
+      display: inline;
+      a {
+        color: @text-color;
+        &::after {
+          content: '/';
+          padding: 0 5px;
+        }
+
+      }
+      &:last-child a {
+        color: @active-color;
+      }
+      &:last-child a::after {
+        content: '';
+      }
+    }
+  }
+}
