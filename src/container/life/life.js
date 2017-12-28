@@ -10,8 +10,8 @@ class Life extends React.Component {
     this.state = {
       tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
       articles: [
-        {title: '品读《沉默的羔羊》', author: 'Clancey'},
-        {title: '《心迷宫》', author: 'Clancey'},
+        {id: 'asd125', title: '品读《沉默的羔羊》', author: 'Clancey'},
+        {id: 'asd126', title: '《心迷宫》', author: 'Clancey'},
       ]
     }
   }

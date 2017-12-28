@@ -11,8 +11,8 @@ class Index extends React.Component {
     this.state = {
       tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
       articles: [
-        {title: '齐物论', author: '南华真人'},
-        {title: 'Hello', author: 'Clancey'},
+        {id: 'asd123', title: '齐物论', author: '南华真人'},
+        {id: 'asd124', title: 'Hello', author: 'Clancey'},
       ]
     }
   }

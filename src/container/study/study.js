@@ -10,8 +10,8 @@ class Study extends React.Component {
     this.state = {
       tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
       articles: [
-        {title: 'ES6', author: 'Clancey'},
-        {title: 'React', author: 'Clancey'},
+        {id: 'asd127', title: 'ES6', author: 'Clancey'},
+        {id: 'asd128', title: 'React', author: 'Clancey'},
       ]
     }
   }
