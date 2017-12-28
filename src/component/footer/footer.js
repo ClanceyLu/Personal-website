@@ -1,6 +1,9 @@
 import React from 'react'
 
 import style from './footer.less'
+/**
+ * 页脚
+ */
 class Footer extends React.Component {
   render() {
     return (

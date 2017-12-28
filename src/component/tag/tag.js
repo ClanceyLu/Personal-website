@@ -1,6 +1,10 @@
 import React from 'react'
 
 import style from './tag.less'
+/**
+ * tags
+ * @param {string[]} 标签数组
+ */
 class Tag extends React.Component {
   render() {
     return (

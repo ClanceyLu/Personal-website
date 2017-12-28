@@ -3,7 +3,9 @@ import React from 'react'
 import style from './info.less'
 
 import avatar from '../../static/img/avatar.jpg'
-
+/**
+ * 博主信息
+ */
 class Info extends React.Component {
   render() {
     return (

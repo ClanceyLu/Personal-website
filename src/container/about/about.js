@@ -5,6 +5,9 @@ import Info from '../../component/info/info'
 import Tag from '../../component/tag/tag'
 import Breadcrumb from '../../component/breadcrumb/breadcrumb'
 import style from './about.less'
+/**
+ * 关于
+ */
 class About extends React.Component {
   constructor(props) {
     super(props)

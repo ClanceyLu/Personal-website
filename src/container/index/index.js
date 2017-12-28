@@ -5,6 +5,9 @@ import Article from '../../component/article/article'
 import Info from '../../component/info/info'
 import Tag from '../../component/tag/tag'
 import style from './index.less'
+/**
+ * 首页
+ */
 class Index extends React.Component {
   constructor(props) {
     super(props)
