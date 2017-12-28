@@ -9,6 +9,7 @@ import Index from './container/index/index'
 import Study from './container/study/study'
 import Life from './container/life/life'
 import About from './container/about/about'
+import Readmore from './container/readmore/readmore'
 
 import Header from './component/header/header'
 import Footer from './component/footer/footer'
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path='/study' component={Study} />
             <Route path='/life' component={Life} />
             <Route path='/about' component={About} />
+            <Route path='/article/:article_id' component={Readmore} />
             <Footer />
           </div>
         </Router>
