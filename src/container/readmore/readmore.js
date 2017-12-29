@@ -18,8 +18,8 @@ class Readmore extends React.Component {
     this.state = {
       tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
       crumbs: [
-        {title: '品味生活', href: 'life'},
-        {title: '齐物论', href: 'life'},
+        {title: '品味生活', href: '/life'},
+        {title: '齐物论', href: '/article/asd123'},
       ]
     }
   }
