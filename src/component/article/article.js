@@ -13,7 +13,7 @@ import style from './article.less'
  */
 class Article extends React.Component {
   render() {
-    const img = require(`../../static/img/${this.props.article.id}.jpg`)
+    const img = require(`../../static/img/asd124.jpg`)
     return (
       <article className={style.article}>
         <h2>{this.props.article.title}</h2>
