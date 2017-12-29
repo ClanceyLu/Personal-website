@@ -24,7 +24,7 @@ class Index extends React.Component {
       <div className={style.flex}>
         <div className={style.content}>
           <main>
-            {this.state.articles.map((v) => <Article article={v} />)}
+            {this.state.articles.map((v) => <Article article={v} key={v.id} />)}
           </main>
           <aside>
             <Info />
