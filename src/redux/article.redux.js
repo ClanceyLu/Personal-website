@@ -13,7 +13,7 @@ const initState = {
 export function article(state = initState, action) {
   switch (action.type) {
     case ARTICLE_LIST:
-      return {...state, articles: [...state.articles, ...action.payload]}
+      return {...state, articles: [...action.payload]}
     case ARTICLE_CONTENT:
       return {...state, thisArticle: action.payload}
     default:
