@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+// 获取文章
 const ARTICLE_LIST = 'ARTICLE_LIST'
 
 const initState = {
@@ -16,16 +16,20 @@ export function article(state = initState, action) {
   }
 }
 
+// 获取文章
 function articleList(data) {
   return {type: ARTICLE_LIST, payload: data}
 }
 
-export function getArticle() {
+/**
+ * 向后台请求获取文章
+ * @param {string} 请求文章分类
+ */
+export function getArticle(type) {
   return dispatch => {
-    axios.get('/article/list')
+    axios.get(`/article/list?type=${type}`)
       .then(res => {
-        console.log(res.data);
-        dispatch(articleList(res.data))
+        dispatch(articleList(res.data.data))
       })
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import '../../util.js'
 import style from './article.less'
 
 /**
@@ -14,6 +15,8 @@ import style from './article.less'
 class Article extends React.Component {
   render() {
     const img = require(`../../static/img/asd124.jpg`)
+    console.log(this.props.article.create_time);
+    const time = new Date(this.props.article.create_time)
     return (
       <article className={style.article}>
         <h2>{this.props.article.title}</h2>
@@ -21,15 +24,15 @@ class Article extends React.Component {
           <span>作者：</span>
           <a href="javascript:;">{this.props.article.author}</a>
           <span className={style.point}>·</span>
-          <time>2017/12/12</time>
+          <time>{time.Format()}</time>
         </p>
 				<figure>
 					<img src={img} alt="缩略图" />
 					<figcaption>
-						<p>南郭子綦隐机而坐，仰天而嘘，荅焉似丧其耦。颜成子游立侍乎前，曰：“何居乎？形固可使如槁木，而心固可使如死灰乎？今之隐机者，非昔之隐机者也？”子綦曰：“偃，不亦善乎而问之也！今者吾丧我，汝知之乎？女闻人籁而未闻地籁，女闻地籁而不闻天籁夫！”</p>
+						<p>{this.props.article.summary}</p>
 					</figcaption>
 				</figure>
-				<Link className={style.readmore} to={`/article/${this.props.article.id}`}>阅读全文</Link>
+				<Link className={style.readmore} to={`/article/${this.props.article._id}`}>阅读全文</Link>
       </article>
     )
   }

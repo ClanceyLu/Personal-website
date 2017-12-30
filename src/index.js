@@ -13,7 +13,7 @@ const store = createStore(
   reducers,
   compose(
     applyMiddleware(thunk),
-    window.devToolsExtension?window.devToolsExtension():f=>f
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )
 

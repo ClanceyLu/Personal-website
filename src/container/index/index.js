@@ -18,15 +18,14 @@ import style from './index.less'
 class Index extends React.Component {
   constructor(props) {
     super(props)
-    this.props.getArticle()
-    console.log(this.props);
+    this.props.getArticle('all')
   }
   render() {
     return (
       <div className={style.flex}>
         <div className={style.content}>
           <main>
-            {this.props.articles.map((v) => <Article article={v} key={v.id} />)}
+            {this.props.articles.map((v) => <Article article={v} key={v._id} />)}
           </main>
           <aside>
             <Info />
