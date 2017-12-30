@@ -1,30 +1,31 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import Article from '../../component/article/article'
 import Info from '../../component/info/info'
 import Tag from '../../component/tag/tag'
 import style from './life.less'
+import { getArticle } from '../../redux/article.redux'
+
+@connect(
+  state => state.article,
+  {getArticle}
+)
 class Life extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      tags: ['JavaScript', 'React', 'Redux', 'CSS', '电影', 'aa', 'ssssssssssssss', 'b'],
-      articles: [
-        {id: 'asd125', title: '品读《沉默的羔羊》', author: 'Clancey'},
-        {id: 'asd126', title: '《心迷宫》', author: 'Clancey'},
-      ]
-    }
+    this.props.getArticle('life')
   }
   render() {
     return (
       <div className={style.life}>
         <div className={style.content}>
           <main>
-            {this.state.articles.map((v) => <Article article={v} />)}
+            {this.props.articles.map((v) => <Article article={v} key={v._id} />)}
           </main>
           <aside>
             <Info />
-            <Tag tags={this.state.tags} />
+            <Tag tags={this.props.tags} />
           </aside>
         </div>
       </div>
