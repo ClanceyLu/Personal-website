@@ -18,6 +18,8 @@ import style from './index.less'
 class Index extends React.Component {
   constructor(props) {
     super(props)
+  }
+  componentDidMount() {
     this.props.getArticle('all')
   }
   render() {

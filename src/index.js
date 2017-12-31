@@ -29,7 +29,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
+      <div style={{height: '100%'}}>
         <Route exact path='/' component={App} />
         <Route path='/admin' component={Admin} />
       </div>

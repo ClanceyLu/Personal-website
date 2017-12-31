@@ -1,0 +1,56 @@
+@import "../../../public.less";
+.login {
+  height: 100%;
+  // background-color: #333;
+  // background-image: url(../../../static/img/login_bg1.png);
+   background-image: radial-gradient(circle at 20% 20%, #99CCCC, #7171B7);
+  // background-size: 100% 100%;
+  position: relative;
+}
+.logo {
+  width: 196px;
+  height: 70px;
+  background-image: url(../../../static/img/logo.png);
+  // margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 44%;
+}
+.input {
+  position: absolute;
+  top: 35%;
+  left: 37%;
+  input {
+    padding: 5px;
+    margin-right: 10px;
+    outline: none;
+    border-radius: 3px;
+    background-color: #ccc;
+    width: 120px;
+    height: 25px;
+    font-size: 15px;
+  }
+  button {
+    background-color: @active-color;
+    border: none;
+    border-radius: 3px;
+    height: 35px;
+    width: 80px;
+    color: #FFF;
+    font-size: 20px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 1px #FFF;
+    outline: none;
+    cursor: pointer;
+    div {
+      width: 0px;
+      height: 0px;
+      display: inline-block;
+      border-width: 8px;
+      border-style: solid;
+      border-color: transparent;
+      border-left-color: #FFF;
+      margin-left: 10px;
+    }
+  }
+}
