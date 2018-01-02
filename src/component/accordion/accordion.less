@@ -1,0 +1,40 @@
+@import "../../public.less";
+.accordion {
+  .logo {
+    width: 196px;
+    height: 70px;
+    background-image: url(../../static/img/logo.png);
+    color: transparent;
+  }
+  & > ul > li {
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    transition: height 1s ease;
+    & > div {
+      font-size: 20px;
+      line-height: 20px;
+      color: @text-color;
+      padding: 10px 0 10px 30px;
+      &:hover {
+        background-color: #bbb;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    &.hide {
+      height: 120px;
+      transition: height 1s ease;
+    }
+    & > ul > li {
+      font-size: 15px;
+      line-height: 15px;
+      padding: 10px 0 10px 35px;
+      &:hover {
+        background: #BBB;
+        cursor: pointer;
+        color: #FFF;
+      }
+    }
+  }
+}

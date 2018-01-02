@@ -10,19 +10,14 @@ import { getCookie } from './util'
 
 import style from './admin.less'
 
+import Accordion from './component/accordion/accordion'
+
 class Admin extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      userid: getCookie('userid'),
-      test: true
+      userid: getCookie('userid')
     }
-    this.show = this.show.bind(this)
-  }
-  show(t) {
-    this.setState({
-      test: t
-    })
   }
   render() {
     return (
@@ -30,23 +25,7 @@ class Admin extends React.Component {
         <div className={style.admin}>
           {this.state.userid ? null : this.props.history.push('/admin/login')}
           <aside>
-            <h2 className={style.logo}>Clancey</h2>
-            <ul>
-              <li className={this.state.test === 'list' ? style.hide : null}>
-                <div onClick={() => this.show('list')}>文章列表</div>
-                <ul>
-                  <li>文章分类</li>
-                  <li>文章查询</li>
-                </ul>
-              </li>
-              <li className={this.state.test === 'edit' ? style.hide : null}>
-                <div onClick={() => this.show('edit')}>文章编辑</div>
-                <ul>
-                  <li>添加文章</li>
-                  <li>修改文章</li>
-                </ul>
-              </li>
-            </ul>
+            <Accordion />
           </aside>
           <main>
             mian
