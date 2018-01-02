@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { login } from '../../../redux/admin.redux'
 
+import { getCookie } from '../../../util'
+
 import style from './login.less'
 
 @connect(
@@ -25,8 +27,10 @@ class Login extends React.Component {
     this.props.login(this.state)
   }
   render() {
+    const userid = getCookie('userid')
     return (
       <div className={style.login}>
+        {userid ? this.props.history.push('/admin') : null}
         <div className={style.logo}></div>
         <div className={style.input}>
           {/* <label for='userid'>用户名：</label> */}

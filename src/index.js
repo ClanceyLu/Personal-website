@@ -14,6 +14,8 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
 import Admin from './admin'
+import Login from './container/admin/login/login'
+
 import registerServiceWorker from './registerServiceWorker'
 
 import reducers from './reducers'
@@ -31,7 +33,8 @@ ReactDOM.render(
     <Router>
       <div style={{height: '100%'}}>
         <Route exact path='/' component={App} />
-        <Route path='/admin' component={Admin} />
+        <Route exact path='/admin' component={Admin} />
+        <Route exact path='/admin/login' component={Login} />
       </div>
     </Router>
   </Provider>,
