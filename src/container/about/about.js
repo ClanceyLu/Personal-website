@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Article from '../../component/article/article'
 import Info from '../../component/info/info'
 import Tag from '../../component/tag/tag'
 import Breadcrumb from '../../component/breadcrumb/breadcrumb'

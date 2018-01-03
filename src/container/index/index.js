@@ -16,9 +16,6 @@ import style from './index.less'
   {getArticle}
 )
 class Index extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   componentDidMount() {
     this.props.getArticle('all')
   }
