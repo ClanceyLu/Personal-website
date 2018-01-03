@@ -31,11 +31,13 @@ import Footer from './component/footer/footer'
 @withRouter
 class App extends Component {
   render() {
+    // 访问后台时要为div添加100%高度
+    const flexHeight = this.props.location.pathname.startsWith('/admin') ? {height: '100%'} : {}
     return (
       <div className={style.App}>
         {/* 如果是访问admin，就不用header */}
         {this.props.location.pathname.startsWith('/admin') ? null : <Header />}
-        <div className={style.flex}>
+        <div className={style.flex} style={flexHeight}>
           <Switch>
             <Route exact path='/' component={Index} />
             <Route path='/study' component={Study} />
