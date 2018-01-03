@@ -14,7 +14,10 @@ import style from './login.less'
 class Login extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      userid: '',
+      pwd: '',
+    }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -27,10 +30,10 @@ class Login extends React.Component {
     this.props.login(this.state)
   }
   render() {
-    const userid = getCookie('userid')
+    const userCookieId = getCookie('userid')
     return (
       <div className={style.login}>
-        {userid ? this.props.history.push('/admin') : null}
+        {userCookieId ? this.props.history.push('/admin') : null}
         <div className={style.logo}></div>
         <div className={style.input}>
           {/* <label for='userid'>用户名：</label> */}

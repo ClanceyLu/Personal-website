@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom'
 
 import style from './App.less'
@@ -21,11 +22,13 @@ class App extends Component {
         <Router>
           <div>
             <Header />
-            <Route exact path='/' component={Index} />
-            <Route path='/study' component={Study} />
-            <Route path='/life' component={Life} />
-            <Route path='/about' component={About} />
-            <Route path='/article/:article_id' component={Readmore} />
+            <Switch>
+              <Route path='/' component={Index} />
+              <Route path='/study' component={Study} />
+              <Route path='/life' component={Life} />
+              <Route path='/about' component={About} />
+              <Route path='/article/:article_id' component={Readmore} />
+            </Switch>
             <Footer />
           </div>
         </Router>

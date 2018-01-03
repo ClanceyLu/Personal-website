@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom'
 import {
   createStore,
@@ -14,7 +15,6 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
 import Admin from './admin'
-import Login from './container/admin/login/login'
 
 import registerServiceWorker from './registerServiceWorker'
 
@@ -32,9 +32,11 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div style={{height: '100%'}}>
-        <Route exact path='/' component={App} />
-        <Route exact path='/admin' component={Admin} />
-        <Route exact path='/admin/login' component={Login} />
+        <Switch>
+          <Route exact path='/' component={App} />
+          <Route path='/admin' component={Admin} />
+
+        </Switch>
       </div>
     </Router>
   </Provider>,
