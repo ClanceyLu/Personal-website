@@ -29,17 +29,18 @@ class Login extends React.Component {
   handleSubmit() {
     this.props.login(this.state)
   }
+  componentDidMount() {
+    if (getCookie('userid')) {
+      this.props.history.push('/admin')
+    }
+  }
   render() {
-    const userCookieId = getCookie('userid')
     return (
       <div className={style.login}>
-        {userCookieId ? this.props.history.push('/admin') : null}
         <div className={style.logo}></div>
         <div className={style.input}>
-          {/* <label for='userid'>用户名：</label> */}
-          <input id='userid' type='text' placeholder='用户名' onChange={v => this.handleChange('userid', v)} />
-          {/* <label for='pwd'>密 码：</label> */}
-          <input id='pwd' type='password' placeholder='密码' onChange={v => this.handleChange('pwd', v)}/>
+          <input type='text' placeholder='用户名' onChange={v => this.handleChange('userid', v)} />
+          <input type='password' placeholder='密码' onChange={v => this.handleChange('pwd', v)}/>
           <button onClick={this.handleSubmit}>登录<div></div></button>
         </div>
       </div>

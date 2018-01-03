@@ -26,8 +26,8 @@ class Readmore extends React.Component {
     this.props.getArticleContent(article_id)
     this.state = {
       crumbs: [
-        {title: '品味生活', href: '/life'},
-        {title: '齐物论', href: '/article/asd123'},
+        {title: '品味生活', href: '/app/life'},
+        {title: '齐物论', href: '/app/article/asd123'},
       ]
     }
   }

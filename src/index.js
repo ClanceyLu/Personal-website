@@ -14,7 +14,6 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import './index.css'
 import App from './App'
-import Admin from './admin'
 
 import registerServiceWorker from './registerServiceWorker'
 
@@ -31,13 +30,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div style={{height: '100%'}}>
-        <Switch>
-          <Route exact path='/' component={App} />
-          <Route path='/admin' component={Admin} />
-
-        </Switch>
-      </div>
+        <App />
     </Router>
   </Provider>,
   document.getElementById('root')
