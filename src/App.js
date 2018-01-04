@@ -13,7 +13,7 @@ import Admin from './admin'
 import Login from './container/admin/login/login'
 
 // 把首页提成组件
-
+import Content from './component/content/content'
 // 首页
 import Index from './container/index/index'
 // 分类为“学海无涯”的页面
@@ -39,12 +39,15 @@ class App extends Component {
         {this.props.location.pathname.startsWith('/admin') ? null : <Header />}
         <div className={style.flex} style={flexHeight}>
           <Switch>
-            <Route exact path='/' component={Index} />
-            <Route path='/study' component={Study} />
-            <Route path='/life' component={Life} />
+            {/* <Route exact path='/' component={Index} /> */}
+            <Route exact path='/' render={() => <Content type='all' />} />
+            {/* <Route path='/study' component={Study} /> */}
+            <Route path='/study' render={() => <Content type='study' />} />
+            {/* <Route path='/life' component={Life} /> */}
+            <Route path='/life' render={() => <Content type='life' />} />
             <Route path='/about' component={About} />
             <Route path='/article/:article_id' component={Readmore} />
-            <Route path='/admin' component={Admin} />
+            <Route exact path='/admin' component={Admin} />
             <Route path='/admin/login' component={Login} />
           </Switch>
         </div>
