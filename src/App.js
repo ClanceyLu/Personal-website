@@ -32,11 +32,11 @@ import Footer from './component/footer/footer'
 class App extends Component {
   render() {
     // 访问后台时要为div添加100%高度
-    const flexHeight = this.props.location.pathname.startsWith('/admin') ? {height: '100%'} : {}
+    const flexHeight = this.props.location.pathname.startsWith('/admin') || this.props.location.pathname.startsWith('/login') ? {height: '100%'} : {}
     return (
       <div className={style.App}>
         {/* 如果是访问admin，就不用header */}
-        {this.props.location.pathname.startsWith('/admin') ? null : <Header />}
+        {this.props.location.pathname.startsWith('/admin') || this.props.location.pathname.startsWith('/login') ? null : <Header />}
         <div className={style.flex} style={flexHeight}>
           <Switch>
             {/* <Route exact path='/' component={Index} /> */}
@@ -47,12 +47,13 @@ class App extends Component {
             <Route path='/life' render={() => <Content type='life' />} />
             <Route path='/about' component={About} />
             <Route path='/article/:article_id' component={Readmore} />
-            <Route exact path='/admin' component={Admin} />
-            <Route path='/admin/login' component={Login} />
+            <Route path='/admin' component={Admin} />
+            {/* <Route path='/admin/login' component={Login} /> */}
+            <Route path='/login' component={Login} />
           </Switch>
         </div>
         {/* 如果是访问admin，就不用footer */}
-        {this.props.location.pathname.startsWith('/admin') ? null : <Footer />}
+        {this.props.location.pathname.startsWith('/admin') || this.props.location.pathname.startsWith('/login') ? null : <Footer />}
       </div>
     )
   }
