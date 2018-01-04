@@ -29,14 +29,10 @@ class Login extends React.Component {
   handleSubmit() {
     this.props.login(this.state)
   }
-  componentDidMount() {
-    if (getCookie('userid')) {
-      this.props.history.push('/admin')
-    }
-  }
   render() {
     return (
       <div className={style.login}>
+        {this.props.user.userid ? this.props.history.push('/admin') : null}
         <div className={style.logo}></div>
         <div className={style.input}>
           <input type='text' placeholder='用户名' onChange={v => this.handleChange('userid', v)} />
