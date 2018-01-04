@@ -15,7 +15,6 @@ import style from './article.less'
 class Article extends React.Component {
   render() {
     const img = require(`../../static/img/asd124.jpg`)
-    console.log(this.props.article.create_time);
     const time = new Date(this.props.article.create_time)
     return (
       <article className={style.article}>

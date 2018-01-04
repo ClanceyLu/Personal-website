@@ -12,7 +12,7 @@ class Accordion extends React.Component {
     this.state = {
       accordionList: [
         {
-          title: '文章列表',
+          title: '网站信息',
           children: [
             {
               title: '文章分类',
@@ -27,6 +27,10 @@ class Accordion extends React.Component {
         {
           title: '文章编辑',
           children: [
+            {
+              title: '文章列表',
+              link: '/admin/list'
+            },
             {
               title: '新增文章',
               link: '/admin/add'
