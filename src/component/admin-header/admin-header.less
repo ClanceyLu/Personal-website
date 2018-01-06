@@ -1,0 +1,29 @@
+@import "../../public";
+.header {
+  background: #FFF;
+  height: 45px;
+  text-align: right;
+  & > div {
+    display: inline-block;
+    width: 90px;
+    height: 45px;
+    float: right;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .user {
+    text-align: center;
+    line-height: 45px;
+    & > div {
+      display: none;
+      background: #FFF;
+    }
+    &:hover div {
+      display: block;
+    }
+  }
+  .message {
+    text-align: center;
+    line-height: 45px;
+  }
+}

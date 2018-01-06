@@ -12,6 +12,8 @@ import style from './admin.less'
 
 // 手风琴导航
 import Accordion from './component/accordion/accordion'
+// AdminHeader
+import AdminHeader from './component/admin-header/admin-header'
 // 文章列表
 import List from './container/admin/list/list'
 // 添加文章
@@ -37,6 +39,7 @@ class Admin extends React.Component {
           <Accordion />
         </aside>
         <main>
+          <AdminHeader />
           <Switch>
             <Route path='/admin/list' component={List} />
             <Route path='/admin/add' component={Add} />

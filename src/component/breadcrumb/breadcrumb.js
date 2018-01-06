@@ -9,6 +9,7 @@ import style from './breadcrumb.less'
  */
 class Breadcrumb extends React.Component {
   render() {
+    console.log(this.props.crumbs)
     return (
       <div className={style.breadcrumb}>
         <ol>
