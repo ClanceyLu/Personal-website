@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 
 import BreadCrumb from '../../../component/breadcrumb/breadcrumb'
 import '../../../util'
-import { getArticleList } from '../../../redux/admin.redux'
+import { getArticleList, deleteAticle } from '../../../redux/admin.redux'
 
 import style from './list.less'
 @connect(
   state => state.admin,
-  {getArticleList}
+  {getArticleList, deleteAticle}
 )
 class List extends React.Component {
   constructor(props) {
@@ -29,6 +29,10 @@ class List extends React.Component {
   componentDidMount() {
     this.props.getArticleList()
   }
+  delArticle(id) {
+    this.props.deleteAticle(id)
+    // console.log(id);
+  }
   render() {
     return(
       <div className={style.list}>
@@ -47,7 +51,7 @@ class List extends React.Component {
           </thead>
           <tbody>
             {this.props.article.map((v, i) => (
-              <tr>
+              <tr key={i}>
                 <td>{i}</td>
                 <td>{v.title}</td>
                 <td>{v.author}</td>
@@ -55,8 +59,8 @@ class List extends React.Component {
                 <td>{v.tags}</td>
                 <td>{ new Date(v.create_time).Format()}</td>
                 <td>
-                  <button>编辑</button>
-                  <button className={style.del}>删除</button>
+                  <button >编辑</button>
+                  <button className={style.del} onClick={() => this.delArticle(v._id)}>删除</button>
                 </td>
               </tr>
             ))}

@@ -9,12 +9,11 @@ import style from './breadcrumb.less'
  */
 class Breadcrumb extends React.Component {
   render() {
-    console.log(this.props.crumbs)
     return (
       <div className={style.breadcrumb}>
         <ol>
           {this.props.crumbs.map((v) => (
-            <li><Link to={v.href}>{v.title}</Link></li>
+            <li key={v.title}><Link to={v.href}>{v.title}</Link></li>
           ))}
         </ol>
       </div>

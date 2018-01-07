@@ -3,6 +3,7 @@ import axios from 'axios'
 const LOGIN_SUC = 'LOGIN_SUC'
 const ADD_SUCCESS = 'ADD_SUCCESS'
 const ARTICLE_LIST = 'ARTICLE_LIST'
+const DELETE_ARTICLE = 'DELETEARTICLE'
 
 const initState = {
   user: {},
@@ -17,6 +18,10 @@ export function admin(state = initState, action) {
       return {...state}
     case ARTICLE_LIST:
       return {...state, article: action.payload}
+    case DELETE_ARTICLE:
+      const del = state.article.find((v) => v._id === action.payload)
+      const newArticle = state.article.splice(state.article.indexOf(del), 1)
+      return {...state, ...newArticle}
     default:
       return state
   }
@@ -32,6 +37,10 @@ function addSuccess() {
 
 function getListSuccess(data) {
   return {type: ARTICLE_LIST, payload: data}
+}
+
+function delArticleSuccess(id) {
+  return {type: DELETE_ARTICLE, payload: id}
 }
 
 
@@ -64,6 +73,17 @@ export function getArticleList() {
       .then(res => {
         if (res.status === 200 && res.data.code === 1) {
           dispatch(getListSuccess(res.data.data))
+        }
+      })
+  }
+}
+
+export function deleteAticle(id) {
+  return dispatch => {
+    axios.get(`/admin/delarticle?article_id=${id}`)
+      .then(res => {
+        if (res.status === 200 && res.data.code === 1) {
+          dispatch(delArticleSuccess(id))
         }
       })
   }
