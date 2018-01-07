@@ -56,11 +56,11 @@ class ArticleForm extends React.Component {
         </div>
         <div>
           <label htmlFor='add-summary'>简 介 ：</label>
-          <textarea id='add-summary' rows='5' cols='50' onChange={v => this.handleChange('summary', v)} />
+          <textarea id='add-summary' rows='3' cols='50' onChange={v => this.handleChange('summary', v)} />
         </div>
         <div>
           <label htmlFor='add-content'>内 容 ：</label>
-          <textarea id='add-content' rows='20' cols='50' onChange={v => this.handleChange('content', v)} />
+          <textarea id='add-content' rows='13' cols='50' onChange={v => this.handleChange('content', v)} />
         </div>
         <div>
           <button onClick={this.handleSubmit}>新 增</button>

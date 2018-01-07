@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import BreadCrumb from '../../../component/breadcrumb/breadcrumb'
 import '../../../util'
 import { getArticleList } from '../../../redux/admin.redux'
 
@@ -10,12 +11,28 @@ import style from './list.less'
   {getArticleList}
 )
 class List extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      crumbs: [
+        {
+          title: '文章编辑',
+          href: '/admin'
+        },
+        {
+          title: '文章列表',
+          href: '/admin/list'
+        }
+      ]
+    }
+  }
   componentDidMount() {
     this.props.getArticleList()
   }
   render() {
     return(
       <div className={style.list}>
+        <BreadCrumb crumbs={this.state.crumbs} />
         <table>
           <thead>
             <tr>
@@ -38,8 +55,8 @@ class List extends React.Component {
                 <td>{v.tags}</td>
                 <td>{ new Date(v.create_time).Format()}</td>
                 <td>
-                  <button>删除</button>
                   <button>编辑</button>
+                  <button className={style.del}>删除</button>
                 </td>
               </tr>
             ))}
