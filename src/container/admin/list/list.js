@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import BreadCrumb from '../../../component/breadcrumb/breadcrumb'
+import Modal from '../../../component/modal/modal'
 import '../../../util'
 import { getArticleList, deleteAticle } from '../../../redux/admin.redux'
 
@@ -23,15 +24,22 @@ class List extends React.Component {
           title: '文章列表',
           href: '/admin/list'
         }
-      ]
+      ],
+      del_id: '',
+      show: false
     }
   }
   componentDidMount() {
     this.props.getArticleList()
   }
-  delArticle(id) {
-    this.props.deleteAticle(id)
-    // console.log(id);
+  delArticle(article_id) {
+    this.setState({
+      show: !this.state.show,
+      del_id: article_id
+    })
+  }
+  test(a) {
+    console.log(a)
   }
   render() {
     return(
@@ -66,6 +74,11 @@ class List extends React.Component {
             ))}
           </tbody>
         </table>
+        <Modal
+          show={this.state.show}
+          cencle={() => this.setState({show: false})}
+          confirm={() => this.props.deleteAticle(this.state.del_id)}
+        />
       </div>
     )
   }

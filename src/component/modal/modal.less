@@ -1,0 +1,36 @@
+@import "../../public";
+.hidden {
+  display: none; 
+}
+.dialog {
+  background: #FFF;
+  position: absolute;
+  top: 20px;
+  left: 40%;
+  min-width: 300px;
+  padding: 0 10px;
+  border-radius: 13px;
+  box-shadow: 1px 1px 3px #ccc;
+  z-index: 999;
+  .header {
+    padding: 10px 0;
+    border-bottom: 2px solid #ccc;
+  }
+  .footer {
+    border-top: 2px solid #ccc;
+    text-align: right;
+    padding: 10px 0;
+    button {
+      padding: 3px 15px;
+      margin-left: 10px;
+    }
+  }
+}
+.dialog_shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+}
