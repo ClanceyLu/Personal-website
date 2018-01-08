@@ -18,6 +18,8 @@ import AdminHeader from './component/admin-header/admin-header'
 import List from './container/admin/list/list'
 // 添加文章
 import Add from './container/admin/add/add'
+// 编辑文章
+import Eidt from './container/admin/edit/edit'
 
 /**
  * 后台管理页面
@@ -43,6 +45,7 @@ class Admin extends React.Component {
           <Switch>
             <Route path='/admin/list' component={List} />
             <Route path='/admin/add' component={Add} />
+            <Route path='/admin/edit/:article_id' component={Eidt} />
           </Switch>
         </main>
       </div>

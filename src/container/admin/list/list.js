@@ -67,7 +67,7 @@ class List extends React.Component {
                 <td>{v.tags}</td>
                 <td>{ new Date(v.create_time).Format()}</td>
                 <td>
-                  <button >编辑</button>
+                  <button onClick={() => this.props.history.push(`/admin/edit/${v._id}`)}>编辑</button>
                   <button className={style.del} onClick={() => this.delArticle(v._id)}>删除</button>
                 </td>
               </tr>
